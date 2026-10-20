@@ -121,3 +121,5 @@ This project is currently for educational and development purposes. Add an appro
 **Aqualine Laundry System Development Team**
 
 This software is planned and managed by Brandon Ochieng & Jama Bashir. 
+## Project Updates
+This section records updates made on the project-updates branch.
