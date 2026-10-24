@@ -1,0 +1,112 @@
+/* 
+  TEAM HOUSE STYLE (6 CHOICES):
+  1. Primary Color (Header): #1f6f3e
+  2. Accent Color (Footer border): #d8a22b
+  3. Background Color: #f7f3e8
+  4. Text Color: #262626
+  5. Body Font: Source Sans 3
+  6. Heading Font: Source Serif 4
+*/
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    background: #f7f3e8;
+    color: #262626;
+    line-height: 1.5;
+    font-family: "Source Sans 3", sans-serif;
+}
+
+h1, h2, h3{
+    font-family: 'Source Serif 4', serif;
+    font-weight: 600;
+}
+
+header{
+    background-color: #1f6f3e;
+    color: #f7f3e8;
+}
+
+nav{
+    background-color: #262626;
+    position: sticky;
+    top: 0;
+}
+
+nav a{
+    color: #f7f3e8;
+    text-decoration: none;
+}
+
+a{
+    color: #1f6f3e;
+}
+
+header, main, aside, footer{
+    padding: 1rem;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+/* Flexbox: organizing navigation links along an axis */
+nav ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.5rem;
+    list-style: none;
+    margin: 0;
+    /* Padding values: top: 0.75rem, right: 1rem, bottom: 0.75rem, left: 1rem */
+    padding: 0.75rem 1rem;
+}
+
+/* Grid layout */
+body{
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 18rem;
+    grid-template-areas:
+        "header header"
+        "nav nav"
+        "main aside"
+        "footer footer";
+}
+
+header{ grid-area: header; }
+nav{ grid-area: nav; }
+main{ grid-area: main; }
+aside{ grid-area: aside; }
+footer{ 
+    grid-area: footer;
+    border-top: 3px solid #d8a22b;
+}
+
+.logo{
+    width: 14%;
+}
+
+/* RWD - Responsive Web Design */
+@media (max-width: 768px) {
+    body{
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas: 
+            "header"
+            "nav"
+            "main"
+            "aside"
+            "footer";
+    }
+    nav{
+        position: static;
+    }
+    nav ul{
+        flex-direction: column;
+    }
+    .logo{
+        width: 2.5rem;
+    }
+}
