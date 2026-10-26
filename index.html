@@ -3,38 +3,477 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agualine Laundry - Home</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Aqualine Laundry - Executive Digital Platform</title>
+    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        /* 60-30-10 COLOR RULE DESIGN TOKENS */
+        :root {
+            /* 60% Dominant Canvas */
+            --bg-canvas: #F8FAFC;
+            --bg-card: #FFFFFF;
+            
+            /* 30% Secondary Structure & Typography */
+            --navy-primary: #1B4F72;
+            --navy-dark: #143A55;
+            --text-ink: #1E2A33;
+            --text-muted: #64748B;
+            --border-light: #E2E8F0;
+
+            /* 10% Accent Highlights (CTAs, Badges, Badging) */
+            --accent-aqua: #2EC4B6;
+            --accent-aqua-hover: #26A69A;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--bg-canvas); /* 60% Dominant Canvas */
+            color: var(--text-ink);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.5;
+        }
+
+        /* 30% STICKY TOP HEADER */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: var(--navy-primary); /* 30% Secondary Structure */
+            border-bottom: 3px solid var(--accent-aqua); /* 10% Accent Highlight */
+            padding: 0.85rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            box-shadow: 0 4px 12px rgba(27, 79, 114, 0.15);
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .logo-text {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #FFFFFF;
+            letter-spacing: -0.02em;
+            margin: 0;
+        }
+
+        .logo-star {
+            background-color: var(--accent-aqua); /* 10% Accent */
+            color: var(--navy-dark);
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        /* SEARCH BAR */
+        .search-bar-container {
+            flex: 1;
+            max-width: 550px;
+            display: flex;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.65rem 1rem 0.65rem 2.4rem;
+            border: 1px solid transparent;
+            border-radius: 6px;
+            font: inherit;
+            font-size: 0.9rem;
+            outline: none;
+            background-color: #FFFFFF;
+        }
+
+        .search-input:focus {
+            box-shadow: 0 0 0 3px rgba(46, 196, 182, 0.35); /* 10% Accent Glow */
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+        }
+
+        .search-btn {
+            background-color: var(--accent-aqua); /* 10% Accent CTA */
+            color: var(--navy-dark);
+            border: none;
+            padding: 0 1.4rem;
+            border-radius: 0 6px 6px 0;
+            font-weight: 700;
+            cursor: pointer;
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            transition: background 0.2s ease;
+        }
+
+        .search-btn:hover {
+            background-color: var(--accent-aqua-hover);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .header-actions a {
+            color: #FFFFFF;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            transition: opacity 0.2s ease;
+        }
+
+        .header-actions a:hover {
+            opacity: 0.85;
+        }
+
+        /* CATEGORY NAVIGATION RIBBON */
+        .category-ribbon {
+            background-color: #FFFFFF; /* 60% Dominant */
+            padding: 0.6rem 2rem;
+            display: flex;
+            gap: 1.5rem;
+            overflow-x: auto;
+            border-bottom: 1px solid var(--border-light);
+            white-space: nowrap;
+        }
+
+        .category-ribbon a {
+            color: var(--navy-primary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 0.3rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .category-ribbon a:hover {
+            color: var(--accent-aqua);
+            border-bottom: 2px solid var(--accent-aqua);
+        }
+
+        /* MAIN CONTAINER & SECTION HEADER */
+        .main-container {
+            max-width: 1250px;
+            margin: 1.5rem auto;
+            padding: 0 1rem;
+        }
+
+        .section-header {
+            background-color: var(--navy-primary); /* 30% Structural Banner */
+            color: #FFFFFF;
+            padding: 1rem 1.5rem;
+            border-radius: 8px 8px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .section-header h2 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1.25rem;
+            margin: 0;
+        }
+
+        .see-all-btn {
+            color: var(--accent-aqua); /* 10% Accent */
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .see-all-btn:hover {
+            text-decoration: underline;
+        }
+
+        /* PRODUCT/SERVICE GRID & CARDS */
+        .cards-grid {
+            background-color: #FFFFFF; /* 60% Dominant White Card Holder */
+            padding: 1.25rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.25rem;
+            border-radius: 0 0 8px 8px;
+            border: 1px solid var(--border-light);
+            border-top: none;
+        }
+
+        .card {
+            border: 1px solid var(--border-light);
+            border-top: 4px solid var(--navy-primary); /* 30% Secondary Frame */
+            border-radius: 6px;
+            padding: 1rem;
+            background: var(--bg-card);
+            transition: all 0.25s ease-in-out;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(27, 79, 114, 0.1);
+        }
+
+        .card-img-wrap {
+            width: 100%;
+            height: 140px;
+            background: var(--bg-canvas);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin-bottom: 0.75rem;
+        }
+
+        /* 10% ACCENT BUTTON ON CARDS */
+        .add-btn {
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+            background-color: var(--accent-aqua); /* 10% Accent */
+            color: var(--navy-dark);
+            border: none;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            font-size: 1.3rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .add-btn:hover {
+            transform: scale(1.1);
+            background-color: var(--accent-aqua-hover);
+        }
+
+        .card-title {
+            font-size: 0.9rem;
+            color: var(--navy-primary);
+            font-weight: 600;
+            margin: 0 0 0.5rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            height: 2.7rem;
+        }
+
+        .card-price {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--navy-dark);
+            margin: 0;
+        }
+
+        .card-old-price {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-decoration: line-through;
+            margin-top: 0.1rem;
+        }
+
+        .discount-badge {
+            display: inline-block;
+            background-color: rgba(46, 196, 182, 0.15); /* 10% Accent Tint */
+            color: var(--navy-primary);
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 0.15rem 0.4rem;
+            border-radius: 4px;
+            margin-top: 0.3rem;
+            align-self: flex-start;
+        }
+
+        .ratings {
+            display: flex;
+            align-items: center;
+            gap: 0.2rem;
+            font-size: 0.75rem;
+            color: #F59E0B;
+            margin-top: 0.4rem;
+        }
+
+        .ratings span {
+            color: var(--text-muted);
+        }
+
+        /* COOKIE CONSENT MODAL */
+        .cookie-banner {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            max-width: 350px;
+            background: #FFFFFF;
+            border-left: 5px solid var(--accent-aqua); /* 10% Accent Border */
+            padding: 1.25rem;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+            z-index: 2000;
+        }
+
+        .cookie-banner h4 {
+            margin: 0 0 0.4rem;
+            color: var(--navy-primary);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .cookie-banner p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 0 0 1rem;
+        }
+
+        .cookie-btn {
+            background-color: var(--accent-aqua); /* 10% Accent Button */
+            color: var(--navy-dark);
+            border: none;
+            width: 100%;
+            padding: 0.65rem;
+            font-weight: 700;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .cookie-btn:hover {
+            background-color: var(--accent-aqua-hover);
+        }
+    </style>
 </head>
 <body>
+
+    <!-- STICKY TOP SEARCH HEADER (30% Secondary Navy + 10% Aqua Accent CTA) -->
     <header>
-        <h1>Agualine Laundry</h1>
-        <p>Professional Digital Laundry & Dry-Cleaning Services</p>
+        <a href="#" class="logo-area">
+            <h1 class="logo-text">AQUALINE</h1>
+            <div class="logo-star">⚡</div>
+        </a>
+
+        <div class="search-bar-container">
+            <span class="search-icon">🔍</span>
+            <input type="text" class="search-input" placeholder="Search laundry services, express wash, or item tracking...">
+            <button class="search-btn">Search</button>
+        </div>
+
+        <div class="header-actions">
+            <a href="#">👤 Account ▾</a>
+            <a href="#"> Help ▾</a>
+            <a href="#"><strong>>Add to Cart</strong></a>
+        </div>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="delivery.html">Delivery</a></li>
-            <li><a href="contacts.html">Contacts</a></li>
-        </ul>
+    <!-- CATEGORY NAVIGATION RIBBON (60% Dominant White Canvas) -->
+    <nav class="category-ribbon">
+        <a href="#">Dry Cleaning</a>
+        <a href="#">Wash & Fold</a>
+        <a href="#"> Suits & Blazers</a>
+        <a href="#"> Duvets & Blankets</a>
+        <a href="#">M-Pesa STK Fast Pay</a>
+        <a href="#">Branch Locations</a>
+        <a href="#"> Customer Support</a>
     </nav>
 
-    <main>
-        <h2>Welcome to Agualine Laundry</h2>
-        <p>Experience reliable, affordable, and digital-first laundry care tailored for your daily routine. We streamline your order intake, tracking, and M-Pesa payments so you never have to worry about lost paper records.</p>
-        <p>Built to handle modern garment care with accuracy and speed!</p>
-    </main>
+    <!-- MAIN DASHBOARD CONTENT -->
+    <div class="main-container">
+        
+        <div class="section-header">
+            <h2><strong>Aqualine Laundry Services</strong></h2>
+            <a href="#" class="see-all-btn">See All ›</a>
+        </div>
 
-    <aside>
-        <h3>Quick Info</h3>
-        <p><strong>Hours:</strong> Mon - Sat: 8:00 AM - 7:00 PM</p>
-        <p><strong>Helpline:</strong> +254 700 000000</p>
-    </aside>
+        <!-- PRODUCT/SERVICE CARDS GRID -->
+        <div class="cards-grid">
+            
+            <!-- Service Card 1 -->
+            <div class="card">
+                <div class="card-img-wrap">
+                    <span style="font-size: 3rem;"></span>
+                    <button class="add-btn"></button>
+                </div>
+                <h3 class="card-title">Executive Suit Dry Cleaning & Pressing</h3>
+                <p class="PRICE PER KG">KSh 650</p>
+            </div>
 
-    <footer>
-        <p>&copy; 2026 Agualine Laundry. All rights reserved.</p>
-    </footer>
+            <!-- Service Card 2 -->
+            <div class="card">
+                <div class="card-img-wrap">
+                    <span style="font-size: 3rem;"></span>
+                    <button class="add-btn">+</button>
+                </div>
+                <h3 class="card-title">Weekly Wash & Fold Bundle (Up to 10kg)</h3>
+                <p class="PRICE PER KG">KSh 1,200</p>
+            </div>
+
+            <!-- Service Card 3 -->
+            <div class="card">
+                <div class="card-img-wrap">
+                    <span style="font-size: 3rem;"></span>
+                    <button class="add-btn">+</button>
+                </div>
+                <h3 class="card-title">Heavy Duvet & Blanket Sanitization</h3>
+                <p class="PRICE PER KG">KSh 500</p>
+            </div>
+
+            <!-- Service Card 4 -->
+            <div class="card">
+                <div class="card-img-wrap">
+                    <span style="font-size: 3rem;"></span>
+                    <button class="add-btn">+</button>
+                </div>
+                <h3 class="card-title">Express 4-Hour Turnaround Service</h3>
+                <p class="card-price">KSh 900</p>
+                <div class="PRICE PER KG">KSh 1,200</div>
+            </div>
+
+            <!-- Service Card 5 -->
+            <div class="card">
+                <div class="card-img-wrap">
+                    <span style="font-size: 3rem;">👟</span>
+                    <button class="add-btn">+</button>
+                </div>
+                <h3 class="card-title">Sneaker Deep Cleaning & Deodorizing</h3>
+                <p class="card-price">KSh 450</p>
+                <div class="PRICE PER KG">KSh 600</div>
+            
+            </div>
+
+        </div>
 </body>
 </html>
