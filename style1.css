@@ -1,297 +1,537 @@
-/* ==========================================================================
-   AGUALINE LAUNDRY - ADVANCED STYLESHEET
-   House Style: 
-   - Main: #1B4F72 (Deep Blue)
-   - Ground: #F4F8FB (Soft White)
-   - Ink: #1E2A33 (Body Text & Nav)
-   - Accent: #2EC4B6 (Fresh Aqua)
-   - Typography: Merriweather (Headings) & Nunito Sans (Body)
-   ========================================================================== */
+he * - selects all elements on the page
+*/
 
-/* Google Fonts Import */
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@600;700&family=Nunito+Sans:wght@400;700&display=swap');
-
-.sticky-top-banner {
-    position: -webkit-sticky; /* For Safari compatibility */
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 9999; /* Ensures it stays on top of all elements */
-    background-color: #1B4F72;
-    color: #FFFFFF;
-    border-bottom: 4px solid #2EC4B6;
-    padding: 0.75rem 1.5rem;
-    text-align: center;
-    font-weight: 600;
-    box-shadow: 0 4px 12px rgba(27, 79, 114, 0.25);
+* {
+    box-sizing : border-box;
 }
-
-.sticky-top-banner p {
-    margin: 0;
-}
-
-.sticky-top-banner .highlight {
-    color: #2EC4B6;
-    font-weight: 700;
-}
-
 body {
-    font-family: Arial;
     margin: 0;
-    background: #F4F8FB;
-    color: #1E2A33;
-    font-family: "Nunito Sans", sans-serif;
-    line-height: 1.6;
-}
-
-/* Typography Hierarchy */
-h1, h2, h3, .logo {
-    font-family: "Merriweather", serif;
-    color: #1B4F72;
-    line-height: 1.25;
-     letter-spacing: 2px;
-}
-
-h1 { font-size: 2.5rem; margin-top: 0;color: var(--primary); }
-h2 { font-size: 1.4rem; margin-top: 2rem; }
-h3 { font-size: 1.1rem; margin: 0 0 0.5rem; }
-.gradient-text {
-    background: linear-gradient(135deg, #1B4F72, #2EC4B6);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: inline-block;
-}
-
-a {
-    color: #1B4F72;
-    text-decoration: none;
-}
-a:hover {
-    text-decoration: underline;
-}
-::selection {
-    background: #2EC4B6;
-    color: #1E2A33;
-}
-
-/* ==========================================================================
-   IMAGE STYLING (Responsive & Clean)
-   ========================================================================== */
-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 6px;
-    display: block;
-    object-fit: cover;
-}
-
-/* ==========================================================================
-   CSS GRID LAYOUT & SEMANTIC HTML STRUCTURE
-   ========================================================================== */
-body {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 18rem;
-    grid-template-areas:
-        "header header"
-        "nav    nav"
-        "main   aside"
-        "footer footer";
     min-height: 100vh;
-    grid-template-rows: auto auto 1fr auto;
+    display: flex;
+    flex-direction: column;
+    background: #f7f3e8;
+    color: #262626;
+    line-height: 1.6;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+}
+h1, h2, h3, h4 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
 }
 
-header { grid-area: header; background: #1B4F72; color: #F4F8FB; padding: 1.5rem 2rem; }
-aside  { grid-area: aside; padding: 2rem 1.5rem; background: #FFFFFF; border-left: 1px solid #1B4F72; }
-main   { grid-area: main; padding: 2rem; }
-footer { grid-area: footer; background: #1E2A33; color: #F4F8FB; padding: 1.25rem 2rem; text-align: center; }
-
-header .logo { color: #F4F8FB; font-size: 1.6rem; margin: 0; }
-header .tagline { margin: 0.25rem 0 0; color: #2EC4B6; }
-
-/* ==========================================================================
-   POSITION STICKY: TOP 0 NAVIGATION & FLEXBOX
-   ========================================================================== */
-nav {
-    grid-area: nav;
-    background: #F4F8FB;
-    border-bottom: 4px solid #2EC4B6;
-    padding: 0 2rem;
+.site-header h1 {
+margin: 0;
+color: #FFFFFF;
+font-family: 'Poppins', sans-serif;
+font-size: 1.7rem;
+font-weight: 700;
+text-align: left;
+}
+header h1 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+.site-header {
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: flex-start;
+gap: 25px;
+width: 100%;
+min-height: 120px;
+padding: 15px 5%;
+background-color: #1B4F72;
+color: #FFFFFF;
+border-bottom: 4px solid #2EC4B6;
+box-sizing: border-box;
+}
+header{
+    background: darkblue;
+    color: #f7f3e8;
+  padding: 1rem 5%;
+  display: flex;
+  align-items: right;
+}
+.main-navigation {
     position: sticky;
     top: 0;
     z-index: 1000;
+    width: 100%;
+    background: #FFFFFF;
+}
+.main-navigation ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0;
+    padding: 12px 5%;
+    list-style: none;
+} 
+.main-navigation a:hover,
+.main-navigation a:focus-visible {
+    background: #DDF5F1;
+    color: #12364D;
+}
+.main-navigation a {
+    display: block;
+    padding: 10px 14px;
+    border-radius: 6px;
+    color: #1B4F72;
+    text-decoration: none;
+    font-weight: 600;
+}
+a {
+    color: #1f4e6f;
 }
 
+/* General image styling */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Images inside the main content */
+main img {
+    margin: 20px auto;
+}
+/* Service Card Design */
+.service-card {
+    background-color: #FFFFFF;
+    border: 1px solid #D9E2E8;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+.service-card img,
+.service-image {
+display: block;
+width: 100%;
+height: 220px;
+object-fit: cover;
+object-position: center;
+border-radius: 8px;
+margin: 0 auto 18px;
+transition: transform 0.3s ease;
+}
+/* Service Card Headings */
+.service-card h2,
+.service-card h3 {
+    color: #1B4F72;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+/* Service Card Descriptions */
+.service-card p {
+    color: #444444;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+.service-card {
+transform: translateY(-4px);
+box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Service Card Hover Effect */
+.service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Hover effect */
+.service-card img:hover,
+.service-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Logo styling */
+.brand-logo img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 0;
+}
+
+/* Mobile image adjustments */
+@media (max-width: 700px) {
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+  
 nav ul {
+    display: flex;
+    justify-content: space-around;
+   flex-wrap: nowrap;
+    gap: 1.5rem;
     list-style: none;
     margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
+   padding: 0.5rem 1rem;
+  
+}
+.main-navigation {
+    background: #FFFFFF;
+    border-bottom: 1px solid #D9E2E8;
 }
 
-nav a {
-    color: #1E2A33;
-    font-weight: 700;
-    display: block;
-    padding: 0.9rem 0;
+nav {
+    position: sticky;
+    top: 0;
+}
+/*grid layout */
+                  
+.brand-logo{
+display: flex;
+align-items: center;
+gap: 15px;
+flex-shrink: 0;
+color: #FFFFFF;
+text-decoration: none;
+font-family: 'Poppins', sans-serif;
+font-size: 1.2rem;
+font-weight: 700;
+}
+.brand-logo img {
+       display: block;
+width: 500px;
+height: 500px;
+object-fit: contain;
+border-radius: 4px;
+}
+/* Professional Website Footer */
+footer {
+    background-color: #1B4F72;
+    color: #FFFFFF;
+    border-top: 3px solid #D8A22B;
+    padding: 25px 20px;
+    margin-top: auto;
+    text-align: center;
+    line-height: 1.7;
+    box-sizing: border-box;
 }
 
-nav a:hover, 
-nav a[aria-current="page"] {
-    color: #1B4F72;
+/* Footer Links */
+footer a {
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Footer Link Hover Effect */
+footer a:hover {
+    color: #2EC4B6;
     text-decoration: underline;
 }
 
-/* ==========================================================================
-   FLEXBOX CARDS COMPONENT
-   ========================================================================== */
-.cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-top: 1.5rem;
+/* Footer Paragraphs */
+footer p {
+    margin: 8px 0;
 }
 
-.card {
-    flex: 1 1 12rem;
-    background: #FFFFFF;
-    padding: 1.25rem;
-    border-radius: 8px;
-    border-top: 4px solid #1B4F72;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-.hero h2 {
-    text-shadow: 0px 2px 4px rgba(27, 79, 114, 0.15);
-}
-.card p { margin: 0; }
-
-/* ==========================================================================
-   STYLING TABLES
-   ========================================================================== */
-.table-wrap {
-    overflow-x: auto;
-    margin-top: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
-table {
+/*RWD - Responsive web design*/
+/*Media Queuries*/
+@media(max-width: 700px){
+    main {
+    flex: 1;
     width: 100%;
-    border-collapse: collapse;
-    background: #FFFFFF;
-    min-width: 32rem;
-}
-
-th, td {
-    padding: 0.85rem 1rem;
-    text-align: left;
-    border-bottom: 1px solid #F4F8FB;
-}
-
-th {
-    background: #1B4F72;
-    color: #F4F8FB;
-    font-weight: 700;
-}
-
-tr:hover {
-    background-color: rgba(46, 196, 182, 0.05);
-}
-
-/* ==========================================================================
-   STYLING FORMS
-   ========================================================================== */
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    max-width: 32rem;
-    background: #FFFFFF;
-    padding: 1.5rem;
-    border-radius: 8px;
-    border-left: 6px solid #2EC4B6;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
-.contact-form label {
-    font-weight: 700;
-    margin-top: 0.6rem;
-    color: #1B4F72;
-}
-
-.contact-form input, 
-.contact-form select, 
-.contact-form textarea {
-    font: inherit;
-    padding: 0.75rem;
-    border: 1px solid #1B4F72;
-    border-radius: 6px;
-    background: #FFFFFF;
-    color: #1E2A33;
-    width: 100%;
-}
-
-.contact-form input:focus, 
-.contact-form textarea:focus, 
-.contact-form select:focus {
-    outline: 3px solid #2EC4B6;
-    border-color: transparent;
-}
-
-.button {
-    display: inline-block;
-    background: #1B4F72;
-    color: #F4F8FB;
-    border: 0;
-    padding: 0.75rem 1.5rem;
-    border-radius: 6px;
-    font: inherit;
-    font-weight: 700;
-    text-decoration: none;
-    cursor: pointer;
-    margin-top: 1rem;
-    align-self: flex-start;
-    transition: background 0.2s ease;
-}
-
-.button:hover {
-    background: #1E2A33;
-    color: #F4F8FB;
-}
-
-/* ==========================================================================
-   RESPONSIVE MEDIA QUERIES (Mobile Breakpoint)
-   ========================================================================== */
-@media (max-width: 700px) {
-    body {
-        grid-template-columns: minmax(0, 1fr);
-        grid-template-areas: 
-            "header"
-            "nav"
-            "main"
-            "aside"
-            "footer";
+}}
+    nav{
+        position: static;
     }
-    
-    header, nav, main { 
-        padding-left: 1rem; 
-        padding-right: 1rem; 
-    }
-    html, body {
-    overflow: visible; /* Do NOT set overflow to hidden, auto, or scroll here */
-}
-    nav ul { 
-        gap: 1rem; 
+    nav ul{
         flex-direction: column;
-        padding: 0.5rem 0;
     }
-    
-    aside { 
-        border-left: 0; 
-        border-top: 1px solid #1B4F72; 
+
+@media (max-width: 700px) {
+    .site-header {
+        flex-direction: column;
+        text-align: center;
     }
-    
-    h1 { font-size: 1.6rem; }
+
+    .site-header h1 {
+        font-size: 1.2rem;
+    }
+
+    .main-navigation ul {
+        flex-direction: column;
+        align-items: stretch;
+          gap: 4px;
+    }
+
+    .main-navigation a {
+        text-align: center;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
 }
+/* Keep website content away from screen edges */
+main {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 24px;
+    box-sizing: border-box;
+}
+
+/* Add comfortable spacing to sidebars */
+aside {
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Prevent long content from overflowing */
+section,
+article {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Make images fit their containers */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Adjust spacing on smaller screens */
+@media (max-width: 700px) {
+    main {
+        padding: 20px 15px;
+    }
+
+    aside {
+        padding: 15px;
+    }
+}
+/* Consistent spacing between website sections */
+section {
+    margin-bottom: 35px;
+    padding: 25px;
+}
+
+/* Improve paragraph readability */
+p {
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+
+/* Keep headings separated from surrounding content */
+h1, h2, h3, h4 {
+    line-height: 1.3;
+    margin-top: 0;
+    margin-bottom: 18px;
+}
+
+/* Responsive spacing for mobile devices */
+@media (max-width: 700px) {
+    section {
+        margin-bottom: 20px;
+        padding: 15px;
+    }
+
+    p {
+        line-height: 1.6;
+    }
+}
+/* General button styling */
+button,
+input[type="submit"],
+input[type="button"],
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #1B4F72;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease,
+                transform 0.2s ease,
+                box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover,
+.btn:hover {
+    background-color: #2EC4B6;
+    color: #12364D;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Keyboard accessibility */
+button:focus-visible,
+input[type="submit"]:focus-visible,
+input[type="button"]:focus-visible,
+.btn:focus-visible {
+    outline: 3px solid #2EC4B6;
+    outline-offset: 3px;
+}
+
+/* Mobile button adjustments */
+@media (max-width: 700px) {
+    button,
+    input[type="submit"],
+    input[type="button"],
+    .btn {
+        max-width: 100%;
+        padding: 12px 18px;
+    }
+}
+/* Main navigation bar */
+.main-navigation {
+    display: block;
+    width: 100%;
+    background: #FFFFFF;
+    border-bottom: 1px solid #D9E2E8;
+}
+
+/* Horizontal navigation layout */
+.main-navigation ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0;
+    padding: 12px 20px;
+    list-style: none;
+}
+
+/* Navigation links */
+.main-navigation ul li {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.main-navigation ul li a {
+    display: block;
+    padding: 10px 14px;
+    border-radius: 6px;
+    color: #1B4F72;
+    text-decoration: none;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover and keyboard focus */
+.main-navigation ul li a:hover,
+.main-navigation ul li a:focus-visible {
+    background: #DDF5F1;
+    color: #12364D;
+}
+
+/* Mobile navigation */
+@media (max-width: 700px) {
+    .main-navigation ul {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .main-navigation ul li a {
+        text-align: center;
+    }
+}
+/* Service cards grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+
+/* Prevent cards from overflowing their grid columns */
+.services-grid .service-card {
+    min-width: 0;
+    margin: 0;
+}
+
+/* Tablet layout */
+@media (max-width: 900px) {
+    .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+}
+
+/* Mobile layout */
+@media (max-width: 600px) {
+    .services-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+    }
+}
+     body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            color: #333;
+        }
+        .table-container {
+            max-width: 700px;
+            margin: auto;
+        }
+        h3 {
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+        .subtitle {
+            text-align: center;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+        th, td {
+            border: 1px solid #b0b0b0;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        td:nth-child(4) {
+            text-align: right; /* Aligns litres values nicely */
+        }
+        th:nth-child(4) {
+            text-align: left;
+        }

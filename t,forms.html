@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aqualine Pricing Tabes</title>
+        <link rel="icon" type="image/png" href="img/logo.png">
+        <script src="js/script.js" defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            color: #333;
+        }
+        .table-container {
+            max-width: 700px;
+            margin: auto;
+        }
+        h3 {
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+        .subtitle {
+            text-align: center;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+        th, td {
+            border: 1px solid #b0b0b0;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        td:nth-child(4) {
+            text-align: right; /* Aligns litres values nicely */
+        }
+        th:nth-child(4) {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+<div class="table-container">
+    <h3>Aqualine Laundry Services & Rates</h3>
+    <div class="subtitle">Transparent Pricing for Premium Laundry Services</div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Service type.</th>
+                <th>Description</th>
+                <th>Price</th>
+            
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Standard Wash &amp; Fold</td>
+                <td>Mixed everyday wear, casual clothes</td>
+                <td>KES 80 / kg</td>
+            
+            </tr>
+            <tr>
+                <td>Express Wash &amp; Fold</td>
+                <td>Processed within 6 hours</td>
+                <td>KES 120 / kg</td>
+            
+            </tr>
+            <tr>
+                <td>Beddings &amp; Blankets</td>
+                <td>Heavy sheets, duvets, and blankets</td>
+                <td>KES 350–600</td>
+           
+            </tr>
+            <!-- Additional Aqualine Laundry Service Items -->
+<tr>
+    <td>Premium Dry Cleaning</td>
+    <td>Suits, formal wear, and delicate fabrics</td>
+    <td>KES 500 / item</td>
+</tr>
+<tr>
+    <td>Ironing & Pressing</td>
+    <td>Standalone steam pressing for washed clothes</td>
+    <td>KES 40 / item</td>
+</tr>
+<tr>
+    <td>Curtains & Drapes</td>
+    <td>Heavy window drapes and net curtains</td>
+    <td>KES 200 / kg</td>
+</tr>
+<tr>
+    <td>Stain Removal Treatment</td>
+    <td>Targeted treatment for stubborn stains and spots</td>
+    <td>KES 150 / item</td>
+</tr>
+<tr>
+    <td>Sneaker & Shoe Care</td>
+    <td>Deep cleaning and deodorizing for footwear</td>
+    <td>KES 300 / pair</td>
+</tr>
+        </tbody>
+    </table>
+</div>
+<style>
+        :root {
+            --primary-blue: #1B4F72;
+            --fresh-aqua: #2EC4B6;
+            --light-bg: #F4F7F6;
+            --dark-text: #222222;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--dark-text);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .form-card {
+            background-color: #FFFFFF;
+            width: 100%;
+            max-width: 550px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            border-top: 6px solid var(--fresh-aqua);
+        }
+
+        .form-header {
+            background-color: var(--primary-blue);
+            color: #FFFFFF;
+            padding: 25px 30px;
+            text-align: center;
+        }
+
+        .form-header h2 {
+            font-size: 24px;
+            margin-bottom: 6px;
+        }
+
+        .form-header p {
+            font-size: 14px;
+            color: #D1E8E2;
+        }
+
+        form {
+            padding: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 6px;
+            font-size: 14px;
+            color: var(--primary-blue);
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid #CCCCCC;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: border-color 0.2s ease;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--fresh-aqua);
+            box-shadow: 0 0 5px rgba(46, 196, 182, 0.3);
+        }
+
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 6px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+        }
+
+        button.btn-submit {
+            width: 100%;
+            background-color: var(--fresh-aqua);
+            color: #FFFFFF;
+            border: none;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            margin-top: 10px;
+        }
+
+        button.btn-submit:hover {
+            background-color: #25a094;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            font-size: 13px;
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-card">
+    <div class="form-header">
+        <h2>Aqualine Laundry</h2>
+        <p>Schedule a Pickup or Drop-off Service</p>
+    </div>
+
+    <form action="#" method="POST">
+        <!-- Full Name -->
+        <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" placeholder="e.g. Jane Doe" required>
+        </div>
+
+        <!-- Phone Number -->
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="e.g. 0712 345 678" required>
+        </div>
+
+        <!-- Service Type -->
+        <div class="form-group">
+            <label for="serviceType">Select Service</label>
+            <select id="serviceType" name="serviceType" required>
+                <option value="" disabled selected>Choose a service option</option>
+                <option value="wash-fold">Wash & Fold</option>
+                <option value="wash-iron">Wash & Iron</option>
+                <option value="dry-cleaning">Dry Cleaning</option>
+                <option value="duvet-bedding">Duvet & Bedding Cleaning</option>
+                <option value="stain-removal">Specialty Stain Removal</option>
+            </select>
+        </div>
+
+        <!-- Additional Items Checkboxes -->
+        <div class="form-group">
+            <label>Item Types (Select all that apply)</label>
+            <div class="checkbox-group">
+                <label class="checkbox-item"><input type="checkbox" name="items[]" value="everyday"> Regular Clothes</label>
+                <label class="checkbox-item"><input type="checkbox" name="items[]" value="bedding"> Bedsheets / Duvets</label>
+                <label class="checkbox-item"><input type="checkbox" name="items[]" value="curtains"> Curtains</label>
+                <label class="checkbox-item"><input type="checkbox" name="items[]" value="suits"> Suits / Formalwear</label>
+            </div>
+        </div>
+
+        <!-- Pickup Date -->
+        <div class="form-group">
+            <label for="pickupDate">Preferred Pickup Date</label>
+            <input type="date" id="pickupDate" name="pickupDate" required>
+        </div>
+
+        <!-- Delivery/Pickup Notes -->
+        <div class="form-group">
+            <label for="notes">Special Instructions or Pickup Address</label>
+            <textarea id="notes" name="notes" rows="3" placeholder="Enter estate name, house number, or delicate fabric care instructions..."></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn-submit">Submit Laundry Request</button>
+
+        <!-- Link back to services -->
+        <a href="services.html" class="back-link">← Back to Services</a>
+    </form>
+</div>
+
+</body>
+</html>
