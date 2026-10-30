@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Tracking Page|Aqualine Laundry Services.</title>
+    <link rel="icon" type="image/png" href="img/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style1.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+<header class="site-header">
+    <a href="index.html" class="brand-logo">
+        <img src="img/logo.png" alt="Aqualine Laundry Logo">
+    </a>
+
+    <h1>AQUALINE LAUNDRY SERVICES</h1>
+</header>
+
+<nav class="main-navigation" aria-label="Main navigation">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="delivery.html">Delivery</a></li>
+        <li><a href="tracking.html">Track Order</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+<main class="tracking-main-content">
+        <!-- ================= HERO TRACKING SEARCH ================= -->
+        <section class="tracking-hero-section">
+            <div class="container">
+                <div class="tracking-search-box">
+                    <p class="section-label">REAL-TIME GARMENT TRACKER</p>
+                    <h2>Track Your Laundry Order</h2>
+                    
+                    <div class="hero-visual">
+                        <img src="img/tracking.jpg" alt="Clean, freshly folded laundry at Aqualine Hub" class="hero-image">
+                    </div>
+                    
+                    <p class="tracking-subtext">Enter your Order ID (e.g., <strong>AQL-8042</strong>) or registered M-Pesa phone number to monitor or update your garment progress.</p>
+
+                    <!-- Order Lookup Form -->
+                    <form action="#" method="GET" class="tracking-form" id="lookupForm">
+                        <div class="search-input-group">
+                            <input type="text" id="order-lookup" name="order-lookup" placeholder="e.g. AQL-8042 or 0712345678" required>
+                            <button type="submit" class="btn-track-submit">Track Order &rarr;</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+<p style="color:purple;">🌊 Aqualine Laundry — Garment Care Confirmation
+
+Dear Customer,<br>
+
+We take great pride in delivering unmatched freshness<br> and care to your wardrobe.<br> To ensure seamless service,<br> kindly take a moment to enter your information and confirm both your payment status and delivery location.<br>
+<strong>
+📌 M-Pesa Till: 166116<br>
+
+📌 Update Details Here: [Link to tracking page]<br></strong>
+
+Confirming these details helps our dispatch team prioritize<br> your order and schedule exact drop-off times.<br> Thank you for placing your trust in Aqualine Laundry.</p>
+        <!-- ================= LIVE STATUS & INTERACTIVE FORMS ================= -->
+        <section class="tracking-results-section">
+            <div class="container">
+                <div class="order-status-card">
+                    <div class="order-header-info">
+                        <div>
+        
+
+                   
+
+                    <!-- Form 1: Customer & Delivery Details Form (Editable Fields) -->
+                    <form id="orderUpdateForm" action="#" method="POST" style="margin-top:25px; padding-top:20px; border-top:1px solid #eee;">
+                        <h4 style="color:#1B4F72; margin-bottom:15px; font-size:18px;">Delivery & Order Settings</h4>
+                        
+                        <div class="order-details-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:15px; margin-bottom:20px;">
+                            <div class="form-group">
+                                <label for="custName" style="display:block; font-size:12px; font-weight:bold; color:#1B4F72; margin-bottom:4px;">CUSTOMER NAME</label>
+                                <input type="text" id="custName" name="custName" value="Dalitso Medi" style="width:100%; padding:8px 10px; border:1px solid #ccc; border-radius:5px; font-size:14px;" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="deliveryAddress" style="display:block; font-size:12px; font-weight:bold; color:#1B4F72; margin-bottom:4px;">DELIVERY LOCATION</label>
+                                <input type="text" id="deliveryAddress" name="deliveryAddress" value="Kahawa Wendani, Block B" style="width:100%; padding:8px 10px; border:1px solid #ccc; border-radius:5px; font-size:14px;" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="deliveryTimeSlot" style="display:block; font-size:12px; font-weight:bold; color:#1B4F72; margin-bottom:4px;">PREFERRED DELIVERY TIME</label>
+                                <select id="deliveryTimeSlot" name="deliveryTimeSlot" style="width:100%; padding:8px 10px; border:1px solid #ccc; border-radius:5px; font-size:14px;">
+                                    <option value="4:30 PM" selected>Today — 4:30 PM</option>
+                                    <option value="6:00 PM">Today — 6:00 PM</option>
+                                    <option value="Tomorrow AM">Tomorrow — Morning (9:00 AM)</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="paymentMethod" style="display:block; font-size:12px; font-weight:bold; color:#1B4F72; margin-bottom:4px;">PAYMENT METHOD</label>
+                                <input type="text" id="paymentMethod" value="M-Pesa Till 166116 (Paid)" readonly style="width:100%; padding:8px 10px; border:1px solid #e0e0e0; background:#f9f9f9; border-radius:5px; font-size:14px; color:#2EC4B6; font-weight:bold;">
+                            </div>
+                        </div>
+
+                        <!-- Form 2: Special Handling Instructions Input -->
+                        <div class="form-group" style="margin-bottom:20px;">
+                            <label for="specialInstructions" style="display:block; font-size:12px; font-weight:bold; color:#1B4F72; margin-bottom:4px;">SPECIAL DELIVERY INSTRUCTIONS</label>
+                            <textarea id="specialInstructions" name="specialInstructions" rows="2" placeholder="e.g. Leave with gate keeper or call when at the gate..." style="width:100%; padding:10px; border:1px solid #ccc; border-radius:5px; font-size:14px;"></textarea>
+                        </div>
+
+                        <button type="submit" style="background:#2EC4B6; color:#ffffff; border:none; padding:10px 20px; border-radius:5px; font-weight:bold; cursor:pointer; font-size:14px; transition: background 0.2s;">Save & Update Order Details</button>
+                    </form>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <div class="footer-principles">
+            <h3>Core Principles</h3>
+            <ul>
+                <li>Transparent Garment Tracking</li>
+                <li>Data Privacy & Security</li>
+                <li>Seamless M-Pesa Integration</li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Aqualine Laundry. All rights reserved. Founded by Brandon Ochieng & Jama Bashir.</p>
+        </div>
+    </footer>
+</body>
+</html>
